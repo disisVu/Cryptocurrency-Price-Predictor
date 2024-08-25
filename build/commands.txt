@@ -1,0 +1,2 @@
+docker build -t crypto-price-predictor -f build/Dockerfile .
+docker run -it --rm -p 5000:5000 crypto-price-predictor
