@@ -138,8 +138,7 @@ app.layout = html.Div([
                             go.Scatter(
                                 x=btc_data.index,
                                 y=btc_data["Close"],
-                                mode='lines',  # Use 'lines' to show continuous data
-                                name='Actual BTC Price'
+                                mode='lines',
                             )
                         ],
                         "layout": go.Layout(
@@ -171,12 +170,24 @@ app.layout = html.Div([
                                 x=valid_btc.index,
                                 y=valid_btc["Predictions"],
                                 mode='lines',  # Use 'lines' to show continuous data
-                                name='Predicted BTC Price'
                             )
                         ],
                         "layout": go.Layout(
                             title='Predicted BTC Prices',
-                            xaxis={'title': 'Date'},
+                            xaxis={
+                                "title": "Date",
+                                'rangeselector': {
+                                    'buttons': list([
+                                        {'count': 1, 'label': '1M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 6, 'label': '6M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 7, 'label': 'YTD', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 1, 'label': '1Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'count': 5, 'label': '5Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'step': 'all'}
+                                    ])
+                                },
+                                'rangeslider': {'visible': True}, 'type': 'date'
+                            },
                             yaxis={'title': 'Closing Rate'}
                         )
                     }
@@ -194,7 +205,6 @@ app.layout = html.Div([
                                 x=eth_data.index,
                                 y=eth_data["Close"],
                                 mode='lines',  # Use 'lines' to show continuous data
-                                name='Actual ETH Price'
                             )
                         ],
                         "layout": go.Layout(
@@ -226,12 +236,24 @@ app.layout = html.Div([
                                 x=valid_eth.index,
                                 y=valid_eth["Predictions"],
                                 mode='lines',  # Use 'lines' to show continuous data
-                                name='Predicted ETH Price'
                             )
                         ],
                         "layout": go.Layout(
                             title='Predicted ETH Prices',
-                            xaxis={'title': 'Date'},
+                            xaxis={
+                                "title": "Date",
+                                'rangeselector': {
+                                    'buttons': list([
+                                        {'count': 1, 'label': '1M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 6, 'label': '6M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 7, 'label': 'YTD', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 1, 'label': '1Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'count': 5, 'label': '5Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'step': 'all'}
+                                    ])
+                                },
+                                'rangeslider': {'visible': True}, 'type': 'date'
+                            },
                             yaxis={'title': 'Closing Rate'}
                         )
                     }
@@ -249,7 +271,6 @@ app.layout = html.Div([
                                 x=ada_data.index,
                                 y=ada_data["Close"],
                                 mode='lines',  # Use 'lines' to show continuous data
-                                name='Actual ADA Price'
                             )
                         ],
                         "layout": go.Layout(
@@ -281,12 +302,24 @@ app.layout = html.Div([
                                 x=valid_ada.index,
                                 y=valid_ada["Predictions"],
                                 mode='lines',  # Use 'lines' to show continuous data
-                                name='Predicted ADA Price'
                             )
                         ],
                         "layout": go.Layout(
                             title='Predicted ADA Prices',
-                            xaxis={'title': 'Date'},
+                            xaxis={
+                                "title": "Date",
+                                'rangeselector': {
+                                    'buttons': list([
+                                        {'count': 1, 'label': '1M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 6, 'label': '6M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 7, 'label': 'YTD', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 1, 'label': '1Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'count': 5, 'label': '5Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'step': 'all'}
+                                    ])
+                                },
+                                'rangeslider': {'visible': True}, 'type': 'date'
+                            },
                             yaxis={'title': 'Closing Rate'}
                         )
                     }
