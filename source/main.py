@@ -144,7 +144,20 @@ app.layout = html.Div([
                         ],
                         "layout": go.Layout(
                             title='Actual BTC Prices',
-                            xaxis={'title': 'Date'},
+                            xaxis={
+                                "title": "Date",
+                                'rangeselector': {
+                                    'buttons': list([
+                                        {'count': 1, 'label': '1M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 6, 'label': '6M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 7, 'label': 'YTD', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 1, 'label': '1Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'count': 5, 'label': '5Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'step': 'all'}
+                                    ])
+                                },
+                                'rangeslider': {'visible': True}, 'type': 'date'
+                            },
                             yaxis={'title': 'Closing Rate'}
                         )
                     }
@@ -186,7 +199,20 @@ app.layout = html.Div([
                         ],
                         "layout": go.Layout(
                             title='Actual ETH Prices',
-                            xaxis={'title': 'Date'},
+                            xaxis={
+                                "title": "Date",
+                                'rangeselector': {
+                                    'buttons': list([
+                                        {'count': 1, 'label': '1M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 6, 'label': '6M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 7, 'label': 'YTD', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 1, 'label': '1Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'count': 5, 'label': '5Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'step': 'all'}
+                                    ])
+                                },
+                                'rangeslider': {'visible': True}, 'type': 'date'
+                            },
                             yaxis={'title': 'Closing Rate'}
                         )
                     }
@@ -228,7 +254,20 @@ app.layout = html.Div([
                         ],
                         "layout": go.Layout(
                             title='Actual ADA Prices',
-                            xaxis={'title': 'Date'},
+                            xaxis={
+                                "title": "Date",
+                                'rangeselector': {
+                                    'buttons': list([
+                                        {'count': 1, 'label': '1M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 6, 'label': '6M', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 7, 'label': 'YTD', 'step': 'month', 'stepmode': 'backward'},
+                                        {'count': 1, 'label': '1Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'count': 5, 'label': '5Y', 'step': 'year', 'stepmode': 'backward'},
+                                        {'step': 'all'}
+                                    ])
+                                },
+                                'rangeslider': {'visible': True}, 'type': 'date'
+                            },
                             yaxis={'title': 'Closing Rate'}
                         )
                     }
@@ -305,11 +344,20 @@ def update_crypto_graph(selected_symbols):
         'layout': go.Layout(
             colorway=["#5E0DAC", '#FF4F00', '#375CB1', '#FF7400', '#FFF400', '#FF0056'],
             title=f"High and Low Prices for Selected Cryptocurrencies",
-            xaxis={"title": "Date",
-                'rangeselector': {'buttons': list([{'count': 1, 'label': '1M', 'step': 'month', 'stepmode': 'backward'},
-                                                    {'count': 6, 'label': '6M', 'step': 'month', 'stepmode': 'backward'},
-                                                    {'step': 'all'}])},
-                'rangeslider': {'visible': True}, 'type': 'date'},
+            xaxis={
+                "title": "Date",
+                'rangeselector': {
+                    'buttons': list([
+                        {'count': 1, 'label': '1M', 'step': 'month', 'stepmode': 'backward'},
+                        {'count': 6, 'label': '6M', 'step': 'month', 'stepmode': 'backward'},
+                        {'count': 7, 'label': 'YTD', 'step': 'month', 'stepmode': 'backward'},
+                        {'count': 1, 'label': '1Y', 'step': 'year', 'stepmode': 'backward'},
+                        {'count': 5, 'label': '5Y', 'step': 'year', 'stepmode': 'backward'},
+                        {'step': 'all'}
+                    ])
+                },
+                'rangeslider': {'visible': True}, 'type': 'date'
+            },
             yaxis={"title": "Price (USD)"}
         )
     }
@@ -334,11 +382,20 @@ def update_crypto_volume_graph(selected_symbols):
         'layout': go.Layout(
             colorway=["#5E0DAC", '#FF4F00', '#375CB1', '#FF7400', '#FFF400', '#FF0056'],
             title=f"Market Volume for Selected Cryptocurrencies",
-            xaxis={"title": "Date",
-                'rangeselector': {'buttons': list([{'count': 1, 'label': '1M', 'step': 'month', 'stepmode': 'backward'},
-                                                    {'count': 6, 'label': '6M', 'step': 'month', 'stepmode': 'backward'},
-                                                    {'step': 'all'}])},
-                'rangeslider': {'visible': True}, 'type': 'date'},
+            xaxis={
+                "title": "Date",
+                'rangeselector': {
+                    'buttons': list([
+                        {'count': 1, 'label': '1M', 'step': 'month', 'stepmode': 'backward'},
+                        {'count': 6, 'label': '6M', 'step': 'month', 'stepmode': 'backward'},
+                        {'count': 7, 'label': 'YTD', 'step': 'month', 'stepmode': 'backward'},
+                        {'count': 1, 'label': '1Y', 'step': 'year', 'stepmode': 'backward'},
+                        {'count': 5, 'label': '5Y', 'step': 'year', 'stepmode': 'backward'},
+                        {'step': 'all'}
+                    ])
+                },
+                'rangeslider': {'visible': True}, 'type': 'date'
+            },
             yaxis={"title": "Volume"}
         )
     }
